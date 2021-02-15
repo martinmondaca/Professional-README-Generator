@@ -7,9 +7,9 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) =>
-        err ? console.error(err) : console.log('Success!')
+        err ? console.error(err) : console.log('Success!');
     );
-}
+};
 
 inquirer
     .prompt([
@@ -27,7 +27,7 @@ inquirer
             name: 'appChallenges',
         }, {
             type: 'input',
-            message: 'What features would you like to implement in the future',
+            message: 'What features would you like to implement in the future?',
             name: 'appFuture',
         }, {
             type: 'input',
@@ -38,11 +38,15 @@ inquirer
             message: 'Please provide usage instructions for your project.',
             name: 'appUsage',
         }, {
-            type: 'input',
-            message: 'Please provide user instructions for testing your project.',
+            type: 'editor',
+            message: 'Please provide instructions for testing your project.',
             name: 'appTest',
         }, {
             type: 'editor',
+            message: 'Please provide a link to the technologies used in this project.',
+            name: 'appTech',
+        }, {
+            type: 'input',
             message: 'Please provide your email address for questions and contributions',
             name: 'devEmail',
         }, {
@@ -58,7 +62,6 @@ inquirer
         },
     ])
     .then((data) => {
-        data.appUsage = [];
         if (data.appLicense === 'GNU AGPL v3') {
             data.appLicenseBadge = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`
         } else if (data.appLicense === 'GNU GPL v3') {
@@ -76,6 +79,5 @@ inquirer
         } else {
             data.appLicenseBadge = '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
         };
-        writeToFile('sampleREADME.md', data)
-
+        writeToFile('sampleREADME.md', data);
     });
