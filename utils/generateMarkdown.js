@@ -35,10 +35,10 @@ function generateMarkdown(data) {
   ${data.appTech}
 
   ## Questions  
-  If you have any questions you can reach me at ${data.devEmail} or via my GitHub [${data.devGitHub}](https://github.com/${data.devGitHub})
+  If you have any questions you can reach me at ${data.devEmail} or via my GitHub [${data.devGitHub}](https://github.com/${data.devGitHub}).
 
   ## Contributions
-  For any contributionns you can reach me at ${data.devEmail} or via my GitHub [${data.devGitHub}](https://github.com/${data.devGitHub})
+  For any contributionns you can reach me at ${data.devEmail} or via my GitHub [${data.devGitHub}](https://github.com/${data.devGitHub}).
 
   ## License
   Licensed under ${data.appLicense} license.

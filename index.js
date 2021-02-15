@@ -7,7 +7,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) =>
-        err ? console.error(err) : console.log('Success!');
+        err ? console.error(err) : console.log('Success!')
     );
 };
 
