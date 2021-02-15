@@ -1,7 +1,7 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
 
-  return `# ${data.appTitle}\n
+  return `# ${data.appTitle}
 
   ${data.appLicenseBadge}
 
@@ -10,6 +10,7 @@ function generateMarkdown(data) {
   * [Installation](#installation)
   * [Usage](#usage)
   * [Tests](#tests)
+  * [Technologies-Used](#technologies-used)
   * [Questions](#questions)
   * [Contributions](#contributions)
   * [License](#license)
@@ -17,14 +18,21 @@ function generateMarkdown(data) {
   ## Description
   ${data.appPurpose}
 
+  ${data.appChallenges}
+
+  ${data.appFuture}
+
   ## Installation
   ${data.appInstall}
 
   ## Usage
-  ${appUsage}
+  ${data.appUsage}
 
   ## Tests
   ${data.appTest}
+
+  ## Technologies-Used
+  ${data.appTech}
 
   ## Questions  
   If you have any questions you can reach me at ${data.devEmail} or via my GitHub [${data.devGitHub}](https://github.com/${data.devGitHub})
@@ -35,6 +43,6 @@ function generateMarkdown(data) {
   ## License
   Licensed under ${data.appLicense} license.
 `;
-}
+};
 
 module.exports = generateMarkdown;
